@@ -9,7 +9,6 @@ public class Board2{
         public JFrame window = new JFrame("Hoppers");
         public static JPanel panel = new JPanel();
 // The code above declares the window and panel to which the buttons will be added.
-        public static ImageIcon[] level1={l,w,l,w,l,w,g,w,g,w,l,w,g,w,l,w,l,w,l,w,g,w,r,w,g};
 // The level array holds the layout of the different buttons within the grid.
         
         public Board2(){
@@ -25,4 +24,10 @@ public class Board2{
         }  
         Square2 loader = new Square2();
 // The Square2 class is instantiated, and loads the buttons to the panel.
+        static void executor() {
+                System.out.println("executor");
+                Board2.panel.removeAll();
+                Board2 hopperboard2 = new Board2();
+// The Executor method removes all buttons from the previous board and reloads the board.
+                }
 }
