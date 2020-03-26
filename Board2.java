@@ -4,11 +4,12 @@ public class Board2{
         public static ImageIcon w = new ImageIcon("Water.png");
         public static ImageIcon g = new ImageIcon("GreenFrog.png");
         public static ImageIcon r = new ImageIcon("RedFrog.png");
+        public static ImageIcon l = new ImageIcon("LilyPad.png");
 // The lines above define the Images that can be placed on the board and their corresponding letter, which will be held in the level array.
         public JFrame window = new JFrame("Hoppers");
         public static JPanel panel = new JPanel();
 // The code above declares the window and panel to which the buttons will be added.
-        public static ImageIcon[] level1={w,r,r,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w};
+        public static ImageIcon[] level1={l,w,l,w,l,w,g,w,g,w,l,w,g,w,l,w,l,w,l,w,g,w,r,w,g};
 // The level array holds the layout of the different buttons within the grid.
         
         public Board2(){
