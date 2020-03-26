@@ -1,5 +1,7 @@
 import javax.swing.*;  
 import java.awt.event.*;
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
 public class Square2{
         int selectPiece;
         public static boolean piece1Clicked=false;
@@ -133,6 +135,7 @@ public class Square2{
         }
 // This ^ Closes Square2
 
+
         static void moveTo() {
         System.out.println("moveto");
         if (Hoppers2.level1[Square2.piece1Position]==Board2.g ^ Hoppers2.level1[Square2.piece1Position]==Board2.r){
@@ -148,57 +151,27 @@ public class Square2{
                 int override = Square2.piece1Position+checkDistance;
                 System.out.println(override);
                 if (Hoppers2.level1[override]==Board2.r ^ Hoppers2.level1[override]==Board2.g){
-                Hoppers2.level1[override]=Board2.l;
-// The following code was made redundant by using the formula of jumpDistance/2 to obtain the position to check for frogs.
-//                if (jumpDifference ==12){ 
-//                        int override = Square2.piece1Position+6;
-//                        System.out.println(override);
-//                        Hoppers2.level1[override]=Board2.l;
-//                }
-//                if (jumpDifference ==-12){
-//                        int override = Square2.piece1Position-6;
-//                        System.out.println(override);
-//                        Hoppers2.level1[override]=Board2.l;
-//                }
-//                if (jumpDifference ==-8){
-//                        int override = Square2.piece1Position-4;
-//                        System.out.println(override);
-//                        Hoppers2.level1[override]=Board2.l;
-//                }
-//                if (jumpDifference ==8){
-//                        int override = Square2.piece1Position+4;
-//                        System.out.println(override);
-//                        Hoppers2.level1[override]=Board2.l;
-//                }
-//                if (jumpDifference ==20){
-//                        int override = Square2.piece1Position+10;
-//                        System.out.println(override);
-//                        Hoppers2.level1[override]=Board2.l;
-//                }
-//                if (jumpDifference ==-20){
-//                        int override = Square2.piece1Position-10;
-//                        System.out.println(override);
-//                        Hoppers2.level1[override]=Board2.l;
-//                }
-//                if (jumpDifference ==4){
-//                        int override = Square2.piece1Position+2;
-//                        System.out.println(override);
-//                        Hoppers2.level1[override]=Board2.l;
-//                }
-//                if (jumpDifference ==-4){
-//                        int override = Square2.piece1Position-2;
-//                        System.out.println(override);
-//                        Hoppers2.level1[override]=Board2.l;
-//                }
-//               
-                
+                Hoppers2.level1[override]=Board2.l;                     
                 System.out.println("moveto");
                 Hoppers2.level1[Square2.piece2Position]=Hoppers2.level1[Square2.piece1Position];
 // Sets the tile being moved to to the value of the moved frog (Red or Green).
                 Hoppers2.level1[Square2.piece1Position]=Board2.l;}
 // Clears the tile that the Frog moved from to an empty Lily Pad.
+                boolean winCheck=true;
+                for (int counter = 0; counter < 25;counter++){
+                        if (Hoppers2.level1[counter]==Board2.g){
+                                winCheck=false;
+                        }
+                }
+                
+                
 
                 Board2.executor();
+                if (winCheck== true){
+                        System.out.println("You Win!");
+                        JFrame Victory = new JFrame();
+                            JOptionPane.showMessageDialog(Victory, "You Win!");
+                }
 // Runs the executor method to reload the board. 
                         }
                 }
