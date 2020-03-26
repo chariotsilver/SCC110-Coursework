@@ -139,13 +139,65 @@ public class Square2{
 // Checks that the piece being moved is a frog, be it red or green.
                 if (Hoppers2.level1[Square2.piece2Position]==Board2.l){
 // Checks that the tile being moved to is an empty Lily Pad.
+                int jumpDifference;
                 System.out.println(Square2.piece1Position);
                 System.out.println(Square2.piece2Position);
+                jumpDifference = (Square2.piece2Position - Square2.piece1Position);
+                System.out.println(jumpDifference);
+                int checkDistance=jumpDifference/2;
+                int override = Square2.piece1Position+checkDistance;
+                System.out.println(override);
+                if (Hoppers2.level1[override]==Board2.r ^ Hoppers2.level1[override]==Board2.g){
+                Hoppers2.level1[override]=Board2.l;
+// The following code was made redundant by using the formula of jumpDistance/2 to obtain the position to check for frogs.
+//                if (jumpDifference ==12){ 
+//                        int override = Square2.piece1Position+6;
+//                        System.out.println(override);
+//                        Hoppers2.level1[override]=Board2.l;
+//                }
+//                if (jumpDifference ==-12){
+//                        int override = Square2.piece1Position-6;
+//                        System.out.println(override);
+//                        Hoppers2.level1[override]=Board2.l;
+//                }
+//                if (jumpDifference ==-8){
+//                        int override = Square2.piece1Position-4;
+//                        System.out.println(override);
+//                        Hoppers2.level1[override]=Board2.l;
+//                }
+//                if (jumpDifference ==8){
+//                        int override = Square2.piece1Position+4;
+//                        System.out.println(override);
+//                        Hoppers2.level1[override]=Board2.l;
+//                }
+//                if (jumpDifference ==20){
+//                        int override = Square2.piece1Position+10;
+//                        System.out.println(override);
+//                        Hoppers2.level1[override]=Board2.l;
+//                }
+//                if (jumpDifference ==-20){
+//                        int override = Square2.piece1Position-10;
+//                        System.out.println(override);
+//                        Hoppers2.level1[override]=Board2.l;
+//                }
+//                if (jumpDifference ==4){
+//                        int override = Square2.piece1Position+2;
+//                        System.out.println(override);
+//                        Hoppers2.level1[override]=Board2.l;
+//                }
+//                if (jumpDifference ==-4){
+//                        int override = Square2.piece1Position-2;
+//                        System.out.println(override);
+//                        Hoppers2.level1[override]=Board2.l;
+//                }
+//               
+                
                 System.out.println("moveto");
                 Hoppers2.level1[Square2.piece2Position]=Hoppers2.level1[Square2.piece1Position];
 // Sets the tile being moved to to the value of the moved frog (Red or Green).
-                Hoppers2.level1[Square2.piece1Position]=Board2.l;
+                Hoppers2.level1[Square2.piece1Position]=Board2.l;}
 // Clears the tile that the Frog moved from to an empty Lily Pad.
+
                 Board2.executor();
 // Runs the executor method to reload the board. 
                         }
