@@ -21,8 +21,16 @@ public class Board2{
         window.setTitle("Hoppers");
         window.setSize(750,750);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+// These lines of code define the paramaters for the window (Height, visibility).
         }  
         Square2 loader = new Square2();
+        /** 
+        * Loader is an instance of Square2 
+        * within the Board2 Class 
+        * It iteratively checks each item in the level1 array
+        * and creates new button classes accordingly.
+        * 
+        */
 // The Square2 class is instantiated, and loads the buttons to the panel.
         static void executor() {
                 Board2.panel.removeAll();
