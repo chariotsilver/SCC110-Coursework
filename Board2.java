@@ -6,7 +6,7 @@ public class Board2{
         public static ImageIcon r = new ImageIcon("RedFrog.png");
         public static ImageIcon l = new ImageIcon("LilyPad.png");
 // The lines above define the Images that can be placed on the board and their corresponding letter, which will be held in the level array.
-        public JFrame window = new JFrame("Hoppers");
+        public static JFrame window = new JFrame("Hoppers");
         public static JPanel panel = new JPanel();
 // The code above declares the window and panel to which the buttons will be added.
 // The level array holds the layout of the different buttons within the grid.
@@ -25,8 +25,9 @@ public class Board2{
         Square2 loader = new Square2();
 // The Square2 class is instantiated, and loads the buttons to the panel.
         static void executor() {
-                System.out.println("executor");
                 Board2.panel.removeAll();
+                Board2.window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+// Closes the old board before refreshing with the updated board.
                 Board2 hopperboard2 = new Board2();
 // The Executor method removes all buttons from the previous board and reloads the board.
                 }
